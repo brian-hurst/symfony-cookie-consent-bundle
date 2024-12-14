@@ -47,6 +47,7 @@ class FNCookieConsentTwigExtension extends AbstractExtension
      */
     public function isCookieConsentOpenByDefault(array $context, string $currentRoute, array $disabledRoutes): string
     {
+        $currentRoute='app_home';
         return in_array($currentRoute, $disabledRoutes) || $this->isCookieConsentSavedByUser($context) ? 'false' : 'true';
     }
 

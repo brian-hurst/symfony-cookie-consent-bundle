@@ -9,8 +9,9 @@ declare(strict_types=1);
 
 namespace FatalNetwork\CookieConsentBundle;
 
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class FNCookieConsentBundle extends Bundle
+class FNCookieConsentBundle extends AbstractBundle
 {
 }

@@ -12,7 +12,7 @@ namespace FatalNetwork\CookieConsentBundle\Tests\Cookie;
 use FatalNetwork\CookieConsentBundle\Cookie\CookieChecker;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\HttpFoundation\ParameterBag;
+use Symfony\Component\HttpFoundation\InputBag;
 use Symfony\Component\HttpFoundation\Request;
 
 class CookieCheckerTest extends TestCase
@@ -40,7 +40,7 @@ class CookieCheckerTest extends TestCase
      */
     public function testIsCookieConsentSavedByUser(array $cookies = [], bool $expected): void
     {
-        $this->request->cookies = new ParameterBag($cookies);
+        $this->request->cookies = new InputBag($cookies);
 
         $this->assertSame($expected, $this->cookieChecker->isCookieConsentSavedByUser());
     }
@@ -67,7 +67,7 @@ class CookieCheckerTest extends TestCase
      */
     public function testIsCategoryAllowedByUser(array $cookies = [], string $category, bool $expected): void
     {
-        $this->request->cookies = new ParameterBag($cookies);
+        $this->request->cookies = new InputBag($cookies);
 
         $this->assertSame($expected, $this->cookieChecker->isCategoryAllowedByUser($category));
     }

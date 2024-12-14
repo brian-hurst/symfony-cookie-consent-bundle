@@ -1,4 +1,4 @@
-import { Controller } from '@hotwired/stimulus'
+import { Controller } from '@hotwired/stimulus';
 window.bootstrap = require('bootstrap')
 
 export default class extends Controller {
@@ -8,7 +8,7 @@ export default class extends Controller {
 
   initialize() {
     this.domElement = document.getElementById('cookieconsent')
-
+    console.log('LOADED!!');
     if (this.domElement) {
       this.buildModal()
       this.eventFormSubmit()
@@ -16,6 +16,7 @@ export default class extends Controller {
   }
 
   connect() {
+    console.log('LOADED!!');
     if (this.openTarget.dataset.fnOpen == 'true') {
       this.show()
     }
@@ -30,6 +31,7 @@ export default class extends Controller {
   }
 
   show() {
+    console.log("CONTROLLER CALLED");
     this.bsModal.show()
   }
 
